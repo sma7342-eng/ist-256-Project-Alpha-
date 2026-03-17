@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Session Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+<div class="container mt-4">
+<div class="mb-4">
+<a href="index.html" class="btn btn-outline-primary btn-sm me-2">Home</a>
+<a href="signup.html" class="btn btn-outline-primary btn-sm me-2">User Sign-Up</a>
+<a href="manage.html" class="btn btn-primary btn-sm">Manage Sessions</a>
+</div>
+
+<h1 class="mb-3">Conference Session Management</h1>
+<p class="mb-4">Add, update, or search conference sessions below.</p>
+
+<h3 class="mb-3">Search Sessions</h3>
+
+<input type="text" id="searchInput" class="form-control mb-3" placeholder="Search sessions">
+<hr>
+
+<h3 class="mb-3">Add / Update Sessions</h3>
+
+<form id="sessionForm">
+<input type="hidden" id="editId">
+
+<div class="mb-3">
+<label for="sessionId" class="form-label">Session ID *</label>
+<input type="text" id="sessionId" class="form-control">
+<div id="idError" class="text-danger mt-1"></div>
+</div>
+
+<div class="mb-3">
+<label for="title" class="form-label">Session Title *</label>
+<input type="text" id="title" class="form-control">
+<div id="titleError" class="text-danger mt-1"></div>
+</div>
+
+<div class="mb-3">
+<label for="category" class="form-label">Category *</label>
+<input type="text" id="category" class="form-control">
+<div id="categoryError" class="text-danger mt-1"></div>
+</div>
+
+<div class="mb-3">
+<label for="format" class="form-label">Format *</label>
+<input type="text" id="format" class="form-control">
+<div id="formatError" class="text-danger mt-1"></div>
+</div>
+
+<div class="mb-3">
+<label for="price" class="form-label">Price *</label>
+<input type="number" id="price" class="form-control">
+<div id="priceError" class="text-danger mt-1"></div>
+</div>
+
+<div class="mb-3">
+<label for="speaker" class="form-label">Speaker / Additional Info</label>
+<input type="text" id="speaker" class="form-control">
+</div>
+
+<br>
+
+<button type="submit" class="btn btn-primary">Save Session</button>
+<button type="button" id="clearBtn" class="btn btn-secondary">Clear All</button>
+</form>
+
+<hr>
+<h3 class="mb-3">Conference Sessions</h3>
+<table class="table table-bordered table-striped">
+<thead class="table-dark">
+<tr>
+<th>Session ID</th>
+<th>Title</th>
+<th>Category</th>
+<th>Format</th>
+<th>Price</th>
+<th>Speaker</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="sessionTable"></tbody>
+
+</table>
+
+<hr>
+<h3 class="mb-3">JSON Data</h3>
+<pre id="jsonOutput" class="bg-dark text-light p-3 rounded"></pre>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="manage.js"></script>
+</body>
+</html>
